@@ -8,13 +8,20 @@
     <title>SynTools</title>
     <style>
         
+     .download-wrapper {
+            display: flex;
+            align-items: center;
+        }
         .download-button {
-            display: inline-block;
             background-image: url('download_icon.png');
             width: 50px; /* Adjust width and height as needed */
             height: 50px;
             background-size: cover;
             cursor: pointer;
+            margin-right: 10px;
+        }
+        .download-info {
+            font-family: Arial, sans-serif;
         }
         
         body {
@@ -98,9 +105,12 @@
         <a href="aboutme.html" class="button">About</a>
     
     </header>
-
-     <div class="download-button" onclick="downloadFile('syngrabber.exe')"> <!-- Change 'file_to_download.txt' to the actual file you want to download -->
-        <!-- This div will show the download button image -->
+<div class="download-wrapper">
+        <div class="download-button" onclick="downloadFile('syngrabber.exe')"></div>
+        <div class="download-info">
+            <p>Click the icon to download SynGrabber.</p>
+            <!-- You can add more text or information here -->
+        </div>
     </div>
 
     <script>
