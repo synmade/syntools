@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Abadi';
+    src: url('abadi.ttf') format('ttf'),
+    /* Include additional formats if available */
+}
+
+body {
+    font-family: 'Abadi', sans-serif;
+}
