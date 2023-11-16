@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About SynTools</title>
+    <style>
+        /* Same styles as the homepage */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: #fff;
+        }
+
+        header {
+            background: #2c3e50;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, .button, img {
+            margin: 0;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1em;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 20px;
+            color: #fff;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            border: none;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .button:hover {
+            background: linear-gradient(to right, #2980b9, #3498db);
+        }
+
+		  .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+		
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        img {
+            max-width: 10%;
+            height: auto;
+            border-radius: 10px; /* Optional: Add rounded corners to the image */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>About SynTools</h1>
+        <div class="image-container">
+            <img src="syn.png" alt="SynTools Logo">
+        </div>
+           <a href="index.html" class="button">Home</a>
+	</header>
+
+    <div class="container">
+        <p>SynTools, crafted by Synmade, embodies his vision of simplifying access to essential resources such as databases. <br><br> Rooted in the belief that technology should be an enabler for everyone, SynTools is designed to empower users with streamlined accessibility. <br><br> Our commitment revolves around providing solutions that enhance efficiency and convenience. Join us on this journey as we strive to make intricate processes more straightforward, putting the power of intel at your fingertips.</p>
+    </div>
+
+    <script>
+        // You can add JavaScript functionality here if needed
+    </script>
+</body>
+
+</html>
