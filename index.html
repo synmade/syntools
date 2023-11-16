@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SynTools</title>
     <style>
+        
+        .download-button {
+            display: inline-block;
+            background-image: url('download_icon.png');
+            width: 50px; /* Adjust width and height as needed */
+            height: 50px;
+            background-size: cover;
+            cursor: pointer;
+        }
+        
         body {
             margin: 0;
             padding: 0;
@@ -89,10 +99,27 @@
     
     </header>
 
+     <div class="download-button" onclick="downloadFile('syngrabber.exe')"> <!-- Change 'file_to_download.txt' to the actual file you want to download -->
+        <!-- This div will show the download button image -->
     </div>
 
     <script>
-        // <a href="#" class="button">Feature 1</a> <a href="#" class="button">Feature 2</a> <a href="#" class="button">Feature 3</a>
+        function downloadFile(filePath) {
+            // Create an anchor element
+            var link = document.createElement('a');
+            link.href = filePath; // Set the file path for download
+            link.download = filePath.substring(filePath.lastIndexOf('/') + 1); // Set the filename
+            link.target = '_blank';
+
+            // Firefox requires the link to be in the body
+            document.body.appendChild(link);
+
+            // Trigger the click event to initiate download
+            link.click();
+
+            // Clean up
+            document.body.removeChild(link);
+        }
     </script>
 
 </body>
