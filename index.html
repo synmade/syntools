@@ -7,11 +7,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SynTools</title>
     <style>
-        
-     .download-wrapper {
+        /* Existing styles... */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Abadi', sans-serif;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .download-wrapper {
             display: flex;
             align-items: center;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
         }
+
         .download-button {
             background-image: url('download_icon.png');
             width: 50px; /* Adjust width and height as needed */
@@ -20,77 +39,9 @@
             cursor: pointer;
             margin-right: 10px;
         }
+
         .download-info {
             font-family: Arial, sans-serif;
-        }
-        
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Abadi', sans-serif;
-            background: linear-gradient(to right, #3498db, #2980b9);
-            color: #fff;
-        }
-
-        header {
-            font-family: 'Abadi', sans-serif;
-            color: #fff;
-            background: #2c3e50;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h1, .button, img {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 1s ease-out forwards;
-        }
-
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .container {
-            position: absolute;
-            top: 10px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 1em;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-            border-radius: 20px;
-            color: #fff;
-            background: linear-gradient(to right, #3498db, #2980b9);
-            border: none;
-            transition: background 0.3s ease-in-out;
-        }
-
-        .button:hover {
-            background: linear-gradient(to right, #2980b9, #3498db);
-        }
-
-        .image-container {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        img {
-            max-width: 10%;
-            height: auto;
-            border-radius: 10px; /* Optional: Add rounded corners to the image */
         }
     </style>
 </head>
@@ -98,14 +49,10 @@
 <body>
 
     <header>
-        <h1>SynTools</h1>
-        <div class="image-container">
-            <img src="syn.png" alt="SynTools Logo">
-        </div>
-        <a href="aboutme.html" class="button">About</a>
-    
+        <!-- Existing header content -->
     </header>
-<div class="download-wrapper">
+
+    <div class="download-wrapper">
         <div class="download-button" onclick="downloadFile('syngrabber.exe')"></div>
         <div class="download-info">
             <p>Click the icon to download SynGrabber.</p>
@@ -124,14 +71,4 @@
             // Firefox requires the link to be in the body
             document.body.appendChild(link);
 
-            // Trigger the click event to initiate download
-            link.click();
-
-            // Clean up
-            document.body.removeChild(link);
-        }
-    </script>
-
-</body>
-
-</html>
+            // Trigger the click event to initiate down
