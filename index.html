@@ -7,33 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SynTools</title>
     <style>
-        
-   
+        /* Existing styles... */
 
         .download-wrapper {
+            position: relative;
             display: flex;
             align-items: center;
+            justify-content: center;
             text-align: center;
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
         }
 
         .download-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             background-image: url('download_icon.png');
             width: 50px; /* Adjust width and height as needed */
             height: 50px;
             background-size: cover;
             cursor: pointer;
-            margin-right: 10px;
         }
 
         .download-info {
             font-family: Arial, sans-serif;
         }
-
-        header {
+		
+		
+		 header {
             font-family: 'Abadi', sans-serif;
             color: #fff;
             background: #2c3e50;
@@ -101,6 +107,8 @@
             height: auto;
             border-radius: 10px; /* Optional: Add rounded corners to the image */
         }
+
+        /* Remaining styles... */
     </style>
 </head>
 
@@ -112,9 +120,9 @@
             <img src="syn.png" alt="SynTools Logo">
         </div>
         <a href="aboutme.html" class="button">About</a>
-    
     </header>
-<div class="download-wrapper">
+
+    <div class="download-wrapper" onmousemove="moveDownloadIcon(event)">
         <div class="download-button" onclick="downloadFile('syngrabber.exe')"></div>
         <div class="download-info">
             <p>Click the icon to download SynGrabber.</p>
@@ -124,20 +132,25 @@
 
     <script>
         function downloadFile(filePath) {
-            // Create an anchor element
             var link = document.createElement('a');
-            link.href = filePath; // Set the file path for download
-            link.download = filePath.substring(filePath.lastIndexOf('/') + 1); // Set the filename
+            link.href = filePath;
+            link.download = filePath.substring(filePath.lastIndexOf('/') + 1);
             link.target = '_blank';
-
-            // Firefox requires the link to be in the body
             document.body.appendChild(link);
-
-            // Trigger the click event to initiate download
             link.click();
-
-            // Clean up
             document.body.removeChild(link);
+        }
+
+        function moveDownloadIcon(event) {
+            var button = document.querySelector('.download-button');
+            var wrapper = document.querySelector('.download-wrapper');
+
+            var rect = wrapper.getBoundingClientRect();
+            var offsetX = event.clientX - rect.left - button.offsetWidth / 2;
+            var offsetY = event.clientY - rect.top - button.offsetHeight / 2;
+
+            button.style.left = offsetX + 'px';
+            button.style.top = offsetY + 'px';
         }
     </script>
 
